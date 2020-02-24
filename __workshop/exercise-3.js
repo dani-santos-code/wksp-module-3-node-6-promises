@@ -11,12 +11,18 @@
 const rp = require("request-promise");
 
 const SECRET_KEY = "370d394f681f1d19e0bd248e20f2378f";
-function getCurrentTemperatureAtPosition(position) {
-  const latitude = position[0];
-  const longitude = position[1];
+module.exports.getCurrentTemperatureAtPosition = (position, address) => {
+  const latitude = position.lat;
+  const longitude = position.lng;
   rp(
     `https://api.darksky.net/forecast/${SECRET_KEY}/${latitude},${longitude}`
-  ).then(data => console.log(JSON.parse(data).currently.temperature));
-}
+  ).then(data =>
+    console.log(
+      `The temperature in ${address} is ${
+        JSON.parse(data).currently.temperature
+      }F`
+    )
+  );
+};
 
-getCurrentTemperatureAtPosition([42.3601, -71.0589]);
+// getCurrentTemperatureAtPosition([42.3601, -71.0589]);
