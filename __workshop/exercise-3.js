@@ -18,7 +18,7 @@ module.exports.getCurrentTemperatureAtPosition = (position, address) => {
     `https://api.darksky.net/forecast/${SECRET_KEY}/${latitude},${longitude}`
   ).then(data =>
     console.log(
-      `The temperature in ${address} is ${
+      `The temperature at ${address} is ${
         JSON.parse(data).currently.temperature
       }F`
     )
