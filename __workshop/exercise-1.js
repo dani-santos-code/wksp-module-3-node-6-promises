@@ -15,8 +15,6 @@ const rp = require("request-promise");
 // Returns the current position of the ISS
 
 function getIssPosition() {
-  let lat;
-  let lng;
   rp("http://api.open-notify.org/iss-now.json")
     .then(jsonData => {
       parsedData = JSON.parse(jsonData);

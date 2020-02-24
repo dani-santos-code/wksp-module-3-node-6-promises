@@ -6,6 +6,7 @@
     "license": "MIT",
     "dependencies": {
         "nodemon": "^2.0.2",
+        "opencage-api-client": "^0.5.1",
         "request": "^2.88.2",
         "request-promise": "^4.2.5"
     }
