@@ -3,7 +3,6 @@ const inquirer = require("inquirer");
 const hiddenNumber = Math.floor(Math.random() * 101) + 1;
 // printing from 1 to 5
 
-let userTries = 1;
 const promptUser = message => {
   return inquirer
     .prompt([
@@ -24,7 +23,6 @@ const promptUser = message => {
         answer.guess > hiddenNumber
           ? promptUser("Try again! Go for a lower number!")
           : promptUser("Try again! Go for a higher number!");
-        userTries += 1;
       }
     });
 };
