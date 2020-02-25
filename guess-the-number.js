@@ -17,7 +17,10 @@ const promptUser = message => {
         return;
       }
       if (answer.guess === hiddenNumber) {
-        console.log("Yay! You're rigth! The right number is", hiddenNumber);
+        console.log(
+          "Yay! You've nailed it! The hidden number is",
+          hiddenNumber
+        );
         return;
       } else {
         answer.guess > hiddenNumber
